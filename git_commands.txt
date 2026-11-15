@@ -1,0 +1,94 @@
+================================================================================
+GIT & GITHUB WORKFLOW COMMAND DOCUMENTATION
+Assignment: Version Control & GitHub Workflow Demonstration
+Repository URL: https://github.com/vanshkamra12/git-workflow-assignment
+Author: Vansh Kamra (vanshkamra27@gmail.com)
+================================================================================
+
+1. git init
+   Initializes a new, empty Git repository in the current working directory, 
+   creating the hidden '.git' directory to manage version history and metadata.
+
+2. git status
+   Displays the current state of the working directory and staging area, 
+   identifying tracked, untracked, modified, and staged files.
+
+3. git add index.html about.html
+   Stages the specified files into Git's staging area (index), preparing 
+   them to be committed in the next snapshot.
+
+4. git commit -m "Initial commit: Add index.html and about.html"
+   Records the staged snapshot into the repository's permanent commit history 
+   with an informative log message describing the initial project state.
+
+5. git diff index.html
+   Displays the exact line-by-line differences between the modified file in 
+   the working tree and the version stored in the previous commit.
+
+6. git add index.html
+   Stages the updated index.html containing the new navigation bar and overview 
+   section for the upcoming commit.
+
+7. git commit -m "Update index.html: Add navigation bar and overview section"
+   Creates the second commit on the main branch, preserving the updated HTML 
+   structure in version history.
+
+8. git branch feature
+   Creates an independent branch pointer named 'feature' at the current HEAD 
+   commit, enabling isolated development without affecting main.
+
+9. git checkout feature
+   Switches the active working environment (HEAD pointer) to the 'feature' 
+   branch so all subsequent modifications are isolated to this branch.
+
+10. git diff about.html
+    Inspects line modifications made to about.html within the feature branch 
+    prior to staging.
+
+11. git add about.html
+    Stages the enhanced about.html containing team and mission sections to the 
+    feature branch staging area.
+
+12. git commit -m "Feature: Add navigation and team details to about.html"
+    Commits the feature enhancements exclusively to the 'feature' branch, 
+    advancing its commit pointer independently of main.
+
+13. git checkout main
+    Switches the active working environment back to the 'main' branch in 
+    preparation for integrating completed feature changes.
+
+14. git merge --no-ff feature -m "Merge branch 'feature' into main"
+    Integrates all commits from the 'feature' branch into 'main' and creates 
+    an explicit merge commit, preserving clear visual branch history in logs.
+
+15. git log --graph --all --decorate --oneline
+    Displays a visual ASCII tree graph of all commits across all branches, 
+    illustrating branch diverging points, commit hashes, and merge joins.
+
+16. git status --ignored
+    Displays untracked files alongside ignored files, verifying that patterns 
+    defined in .gitignore (such as *.log and temp/) are properly ignored.
+
+17. git add .gitignore
+    Stages the .gitignore configuration file into the repository index.
+
+18. git commit -m "Configure .gitignore to ignore *.log files and temp/ directory"
+    Commits the .gitignore file to version control to enforce project-wide file 
+    exclusion policies for all collaborators.
+
+19. git reset HEAD~1
+    Undoes the most recent commit by rewinding the HEAD pointer by one commit 
+    while preserving modified files in the working directory as unstaged changes.
+
+20. git remote add origin https://github.com/vanshkamra12/git-workflow-assignment.git
+    Connects the local Git repository to the remote GitHub repository under the 
+    standard alias 'origin'.
+
+21. git push -u origin main
+    Pushes all commits on the local 'main' branch to GitHub and sets up upstream 
+    tracking for streamlined future pushes and pulls.
+
+22. git push -u origin feature
+    Pushes the local 'feature' branch to GitHub to make the branch history and 
+    isolated commits publicly inspectable on GitHub.
+================================================================================
